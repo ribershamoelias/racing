@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSE Racing – Sim Racing Team: Präzision, Fairness, Community</title>
+  <meta name="description" content="RSE Racing baut ein professionelles Sim Racing Team auf – mit Fokus auf Nachwuchsförderung, fairem Wettkampf, sauberer Vorbereitung und Community. Coming Soon." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="canonical" href="https://rseracing.com/" />
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicons.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicons.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicons.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicons.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicons.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicons.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicons.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicons.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./favicons.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicons.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons.ico/favicon-16x16.png">
+  <link rel="manifest" href="./favicons.ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./favicons.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RSE Racing" />
+  <meta property="og:title" content="RSE Racing – Professionelles Sim Racing Team" />
+  <meta property="og:description" content="Professionelles Sim Racing Team. Nachwuchs, fairer Wettkampf, saubere Vorbereitung & Community." />
+  <meta property="og:url" content="https://rseracing.com/" />
+  <meta property="og:image" content="https://rseracing.com/assets/img/rseracinglogo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RSE Racing – Professionelles Sim Racing Team" />
+  <meta name="twitter:description" content="Professionelles Sim Racing Team. Nachwuchs, fairer Wettkampf, saubere Vorbereitung & Community." />
+  <meta name="twitter:image" content="https://rseracing.com/assets/img/rseracinglogo.png" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&display=swap');
+    
+    :root{
+      --rse-blue:#0080ff;
+      --rse-blue-2:#00b1ff;
+      --bg-900:#0b0f14;
+      --bg-800:#111722;
+      --bg-700:#161b22;
+      --glass: rgba(255,255,255,.06);
+      --glass-border: rgba(255,255,255,.14);
+      --nav-h:64px;
+      --nav-gap:10px;
+    }
+    @media (min-width:768px){
+      :root{ --nav-h:74px; --nav-gap:12px; }
+    }
+    
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0; background:var(--bg-900); color:#fff;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .font-racing{ font-family:'Orbitron', monospace; letter-spacing:.02em; }
+    
+    /* Fixe Top-Navigation */
+    .site-nav{
+      position:fixed; inset-inline:0;
+      top: env(safe-area-inset-top, 0px);
+      height: calc(var(--nav-h));
+      z-index:60;
+      background: rgba(12,18,30,.75);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .nav-link{
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.55rem .8rem; border-radius:10px; font-weight:600; color:#e7f1ff; text-decoration:none;
+      border:1px solid transparent; transition: border-color .2s, background .2s, color .2s, transform .2s;
+    }
+    .nav-link:hover{ color:#fff; transform:translateY(-1px); }
+    .nav-link.active{
+      border-color: rgba(255,255,255,.16);
+      background: rgba(0,128,255,.10);
+      box-shadow: inset 0 0 12px rgba(0,128,255,.10);
+    }
+
+    /* Mobile Menu Sheet */
+    .mobile-sheet{
+      position:fixed; inset-inline:0;
+      top: calc(var(--nav-h) + env(safe-area-inset-top,0px));
+      z-index:55;
+      background: rgba(10,16,28,.95);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      transform: translateY(-8px);
+      opacity:0; pointer-events:none;
+      transition:.22s ease;
+    }
+    .mobile-sheet.open{ transform:none; opacity:1; pointer-events:auto; }
+    
+    .ham-btn{
+      width:42px; height:42px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06); display:grid; place-items:center; font-size:20px; line-height:1;
+    }
+    
+    /* Hero Section */
+    .hero-section{
+      position:relative; width:100%; min-height:100vh; overflow:hidden;
+      background:
+        radial-gradient(120% 80% at 50% 100%, rgba(0,128,255,.08) 0%, rgba(0,0,0,0) 60%),
+        linear-gradient(140deg, #0b0f14 0%, #0d1320 45%, #0a1526 100%);
+      isolation:isolate;
+      padding: clamp(20px, 3vw, 48px);
+      padding-top: calc(var(--nav-h) + var(--nav-gap) + env(safe-area-inset-top,0px));
+      padding-bottom: clamp(16px, 3vh, 40px);
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Glass card */
+    .glass{
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .glass:hover{ transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,128,255,.15); border-color: rgba(0,128,255,.35); }
+    
+    /* Headings */
+    .title{
+      font-family:'Orbitron', monospace; font-weight:900; letter-spacing:.02em;
+      background: linear-gradient(90deg, #e8f3ff 0%, #a9d6ff 50%, #69b7ff 100%);
+      -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color:transparent;
+      text-shadow: 0 6px 30px rgba(0,128,255,.12); line-height:1.05;
+    }
+    
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:.9rem 1.2rem; border-radius:14px; font-weight:700;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      text-decoration:none;
+    }
+    .btn-primary{ color:#0a1220; background:linear-gradient(180deg, var(--rse-blue) 0%, #0073e6 100%); box-shadow: 0 0 24px rgba(0,128,255,.35); }
+    .btn-primary:hover{ transform: translateY(-2px) scale(1.02); box-shadow:0 0 40px rgba(0,128,255,.5); }
+    .btn-ghost{ color: var(--rse-blue); border: 2px solid var(--rse-blue); background: transparent; }
+    .btn-ghost:hover{ background: var(--rse-blue); color:#06101e; box-shadow:0 0 36px rgba(0,128,255,.35); }
+    
+    /* Subtile Lines im Hero */
+    .speedlines::before, .speedlines::after{
+      content:""; position:absolute; left:-20%; width:140%; height:1px;
+      background:linear-gradient(90deg, transparent, rgba(0,128,255,.65), transparent);
+      filter:blur(.2px); opacity:.18; pointer-events:none; animation: lines 4.6s linear infinite;
+    }
+    .speedlines::before{ top:30%; animation-delay:.6s; }
+    .speedlines::after{ top:70%; animation-delay:1.6s; }
+    @keyframes lines { 0%{ transform:translateX(-30%);} 100%{ transform:translateX(30%);} }
+    
+    /* Reveal */
+    .reveal{ opacity:0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show{ opacity:1; transform:none; }
+    
+    /* Content Sections */
+    .content-section {
+      padding: clamp(60px, 8vw, 120px) clamp(20px, 3vw, 48px);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .content-section:nth-child(even) {
+      background: var(--bg-800);
+    }
+
+    /* Cookie Banner */
+    .cc-slide-up{transform:translateY(16px);opacity:0;transition:.25s ease;}
+    .cc-show{transform:translateY(0);opacity:1;}
+    
+    /* prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      .reveal{ transition:none !important; }
+      .speedlines::before, .speedlines::after{ animation:none !important; }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="site-nav" aria-label="Hauptnavigation">
+    <div class="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3" aria-label="Startseite">
+        <img src="./assets/img/rseracinglogo.png" alt="RSE Racing Sim Racing Team Logo" class="w-8 h-8 rounded-md" />
+        <span class="font-racing text-xl">RSE Racing</span>
+      </a>
+      
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-2">
+          <li><a class="nav-link" href="#vision">Vision</a></li>
+          <li><a class="nav-link" href="#vorgehen">Vorgehen</a></li>
+          <li><a class="nav-link" href="#roadmap">Roadmap</a></li>
+          <li><a class="nav-link" href="#partner">Partner</a></li>
+          <li><a class="nav-link" href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      
+      <button id="ham" class="md:hidden ham-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">☰</button>
+    </div>
+    
+    <nav id="mobile-menu" class="mobile-sheet md:hidden">
+      <ul class="px-4 py-3 space-y-2">
+        <li><a class="nav-link w-full" href="#vision">🎯 Vision</a></li>
+        <li><a class="nav-link w-full" href="#vorgehen">🧭 Vorgehen</a></li>
+        <li><a class="nav-link w-full" href="#roadmap">🗺️ Roadmap</a></li>
+        <li><a class="nav-link w-full" href="#partner">🤝 Partner</a></li>
+        <li><a class="nav-link w-full" href="#kontakt">✉️ Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="hero" class="hero-section" aria-label="RSE Racing Team">
+      <div class="speedlines" aria-hidden="true"></div>
+      
+      <div class="mx-auto max-w-6xl w-full text-center">
+        <header>
+          <div class="reveal" style="transition-delay:.05s">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5">
+              <img src="./assets/img/rseracinglogo.png" alt="RSE Racing Sim Racing Team Logo" width="24" height="24" class="rounded-md"/>
+              <strong class="font-racing">RSE Racing</strong>
+            </span>
+          </div>
+          
+          <h1 class="title text-5xl md:text-7xl font-black mt-6 reveal" style="transition-delay:.12s">
+            Präzision. Teamgeist. Saubere Vorbereitung.
+          </h1>
+          
+          <p class="text-slate-300 text-lg md:text-xl mt-5 max-w-3xl mx-auto reveal" style="transition-delay:.2s">
+            Wir bauen ein <strong>professionelles Sim Racing Team</strong> – mit Fokus auf
+            <strong>Nachwuchs</strong>, <strong>fairen Wettkampf</strong> und <strong>reproduzierbare Pace</strong>.
+            Schritt für Schritt. <span class="text-sky-400 font-semibold">Coming&nbsp;Soon.</span>
+          </p>
+          
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4 reveal" style="transition-delay:.28s">
+            <a href="#vision" class="btn btn-primary">Warum wir das machen</a>
+            <a href="#roadmap" class="btn btn-ghost">Roadmap</a>
+          </div>
+          
+          <div class="mt-8 text-sm text-slate-400 text-center reveal" style="transition-delay:.36s">
+            Partner & Sponsoren:
+            <strong class="text-slate-200">RSE Systems</strong>
+            • Community-Partner: <strong class="text-slate-200">MotorUnity</strong>
+          </div>
+        </header>
+      </div>
+    </section>
+    
+    <section id="vision" class="content-section" aria-label="Vision & Warum">
+      <header class="text-center">
+        <h2 class="title text-4xl md:text-5xl reveal">Warum RSE Racing?</h2>
+        <p class="text-slate-300 mt-4 max-w-3xl mx-auto reveal" style="transition-delay:.08s">
+          Sim Racing verbindet Präzision, Teamwork und Haltung. Wir bauen ein Team, das
+          <strong>diszipliniert trainiert</strong>, <strong>fair racet</strong> und <strong>Talente entwickelt</strong>.
+          Nicht laut – <em>konstant gut</em>.
+        </p>
+      </header>
+      
+      <div class="grid md:grid-cols-3 gap-5 mt-10">
+        <article class="glass p-6 reveal" style="transition-delay:.1s">
+          <h3 class="font-racing text-xl mb-2 text-sky-400">Nachwuchs zuerst</h3>
+          <p class="text-slate-300">Wir scouten junge Fahrer:innen, geben Struktur und Feedback. Ziel:
+            <strong>sauberes, reproduzierbares Fahren</strong> statt Zufallshotlaps.</p>
+        </article>
+        <article class="glass p-6 reveal" style="transition-delay:.18s">
+          <h3 class="font-racing text-xl mb-2 text-sky-400">Wettkampf, sauber</h3>
+          <p class="text-slate-300">Klare Teamregeln, Review-Kultur, respektvoller Umgang.
+            <strong>Fairness</strong> und <strong>Konstanz</strong> sind unser Benchmark.</p>
+        </article>
+        <article class="glass p-6 reveal" style="transition-delay:.26s">
+          <h3 class="font-racing text-xl mb-2 text-sky-400">Community & Haltung</h3>
+          <p class="text-slate-300">Mit <strong>MotorUnity</strong> als Hub bauen wir eine
+            <strong>toxikfreie Community</strong> für Austausch, Sessions und Events.</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="vorgehen" class="content-section" aria-label="Unser Vorgehen">
+      <header class="text-center">
+        <h2 class="title text-4xl md:text-5xl reveal">Wie wir starten</h2>
+        <p class="text-slate-300 mt-4 max-w-3xl mx-auto reveal" style="transition-delay:.08s">
+          Transparent und realistisch. Wir tasten uns an den Grid heran – mit klaren Bausteinen.
+        </p>
+      </header>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+        <article class="glass p-6 reveal transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-3xl mb-2">🔎</div>
+          <h3 class="font-racing text-lg mb-1 text-sky-400">Scouting & Tryouts</h3>
+          <p class="text-slate-300 text-sm">Offene Sessions, Fokus auf Basics: Linienwahl, Konstanz, Racecraft.</p>
+        </article>
+        <article class="glass p-6 reveal transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-3xl mb-2">📅</div>
+          <h3 class="font-racing text-lg mb-1 text-sky-400">Trainingsstruktur</h3>
+          <p class="text-slate-300 text-sm">Wöchentliche Stints, klare Programme, Feedback-Loops & Reviews.</p>
+        </article>
+        <article class="glass p-6 reveal transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-3xl mb-2">🧭</div>
+          <h3 class="font-racing text-lg mb-1 text-sky-400">Clean Racing Code</h3>
+          <p class="text-slate-300 text-sm">Verbindliche Team-Etikette: Respekt, Verantwortung, kein Drama.</p>
+        </article>
+        <article class="glass p-6 reveal transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <div class="text-3xl mb-2">📊</div>
+          <h3 class="font-racing text-lg mb-1 text-sky-400">Analyse & Setups</h3>
+          <p class="text-slate-300 text-sm">Setup-Vergleich, Simple-Telemetry-Review, Fokus auf reproduzierbare Pace.</p>
+        </article>
+      </div>
+      
+      <p class="text-slate-400 text-center mt-6 text-sm reveal">
+        Plattformen (geplant): <span class="text-slate-200">iRacing</span> und <span class="text-slate-200">Assetto Corsa Competizione</span> – abhängig von Line-up & Ligaslot.
+      </p>
+    </section>
+    
+    <section id="roadmap" class="content-section" aria-label="Roadmap">
+      <div class="mx-auto max-w-5xl">
+        <header class="text-center">
+          <h2 class="title text-4xl md:text-5xl reveal">Roadmap</h2>
+          <p class="text-slate-300 mt-4 reveal" style="transition-delay:.08s">Klarer Pfad zum Grid.</p>
+        </header>
+        
+        <ol class="relative border-s border-slate-700/60 ps-6 space-y-8 mt-10">
+          <li class="reveal" style="transition-delay:.1s">
+            <span class="absolute -start-3.5 top-1.5 w-6 h-6 rounded-full bg-[var(--rse-blue)] shadow-[0_0_18px_#0080ff] animate-pulse"></span>
+            <div class="font-racing text-sky-400">Q4 2025</div>
+            <div class="text-slate-200 font-semibold">Team-Konzept, Reglement, Prozesse <span class="text-sky-400">– in Arbeit</span></div>
+          </li>
+          <li class="reveal" style="transition-delay:.18s">
+            <span class="absolute -start-3.5 top-1.5 w-6 h-6 rounded-full bg-slate-600"></span>
+            <div class="font-racing text-slate-400">Q2 2026</div>
+            <div class="text-slate-200 font-semibold">Scouting & erste offene Sessions</div>
+          </li>
+          <li class="reveal" style="transition-delay:.26s">
+            <span class="absolute -start-3.5 top-1.5 w-6 h-6 rounded-full bg-slate-600"></span>
+            <div class="font-racing text-slate-400">Q3 2026</div>
+            <div class="text-slate-200 font-semibold">Line-up, Trainingsroutine, Serienauswahl</div>
+          </li>
+          <li class="reveal" style="transition-delay:.34s">
+            <span class="absolute -start-3.5 top-1.5 w-6 h-6 rounded-full bg-slate-600"></span>
+            <div class="font-racing text-slate-400">Q1 2027</div>
+            <div class="text-slate-200 font-semibold">Erste Renneinsätze</div>
+          </li>
+          <li class="reveal" style="transition-delay:.42s">
+            <span class="absolute -start-3.5 top-1.5 w-6 h-6 rounded-full bg-slate-600"></span>
+            <div class="font-racing text-slate-400">Q2 2027</div>
+            <div class="text-slate-200 font-semibold">Community-Events & Nachwuchsworkshops</div>
+          </li>
+        </ol>
+        
+        <div class="text-center mt-10 reveal" style="transition-delay:.5s">
+          <a href="#kontakt" class="btn btn-primary">Mitfahren? Interesse bekunden</a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="partner" class="content-section" aria-label="Partner & Sponsoren">
+      <div class="mx-auto max-w-6xl">
+        <header class="text-center">
+          <h2 class="title text-4xl md:text-5xl reveal">Partner & Sponsoren</h2>
+          <p class="text-slate-300 mt-4 reveal" style="transition-delay:.08s">Starker Support – klare Rollen.</p>
+        </header>
+        
+        <div class="grid sm:grid-cols-2 gap-6 mt-10">
+          <article class="glass p-6 flex items-center gap-4 reveal" style="transition-delay:.1s">
+            <img src="./assets/img/RSELogo.png" alt="RSE Systems Logo" width="72" height="72" class="rounded-md" />
+            <div>
+              <h3 class="font-racing text-xl text-sky-400">RSE Systems</h3>
+              <p class="text-slate-300 text-sm">Hauptsponsor & Organisation. Struktur, Orga, Unterstützung beim Teamaufbau.</p>
+            </div>
+          </article>
+          
+          <article class="glass p-6 flex items-center gap-4 reveal" style="transition-delay:.18s">
+            <img src="./assets/img/motorunity.png" alt="MotorUnity Community-Partner Logo" width="72" height="72" class="rounded-md" />
+            <div>
+              <h3 class="font-racing text-xl text-sky-400">MotorUnity</h3>
+              <p class="text-slate-300 text-sm">Community-Partner. Austausch, Events & Plattform für Fans und Fahrer.</p>
+            </div>
+          </article>
+        </div>
+        
+        <div class="text-center mt-8 reveal" style="transition-delay:.26s">
+          <a href="#kontakt" class="btn btn-ghost">Sponsoring anfragen</a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="kontakt" class="content-section" aria-label="Kontakt & Interesse">
+      <div class="mx-auto max-w-6xl">
+        <header class="text-center">
+          <h2 class="title text-4xl md:text-5xl reveal">Interesse?</h2>
+          <p class="text-slate-300 mt-4 max-w-3xl mx-auto reveal" style="transition-delay:.08s">
+            Du willst mitfahren, unterstützen oder einfach mehr erfahren? Melde dich kurz – wir kommen zurück.
+          </p>
+        </header>
+        
+        <div class="grid md:grid-cols-2 gap-6 mt-10">
+          <div class="glass p-6 reveal" style="transition-delay:.1s">
+            <h3 class="font-racing text-lg text-sky-400 mb-1">E-Mail</h3>
+            <p class="text-slate-300 text-sm">Schreib uns direkt.</p>
+            <a class="btn btn-primary mt-3" href="mailto:info@rse-systems.com?subject=RSE%20Racing%20Interesse">info@rse-systems.com</a>
+          </div>
+          <div class="glass p-6 reveal" style="transition-delay:.18s">
+            <h3 class="font-racing text-lg text-sky-400 mb-1">Discord</h3>
+            <p class="text-slate-300 text-sm">Community-Server (bald).</p>
+            <button class="btn btn-ghost mt-3" type="button" disabled>Invite folgt</button>
+          </div>
+        </div>
+        
+        <div class="text-center text-xs text-slate-500 mt-8 reveal" style="transition-delay:.26s">
+          © 2025 RSE Systems – RSE Racing •
+          <a class="underline hover:no-underline text-slate-300" href="/legal/datenschutz.html">Datenschutz</a> •
+          <a class="underline hover:no-underline text-slate-300" href="/legal/impressum.html">Impressum</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportTeam",
+    "name": "RSE Racing",
+    "url": "https://rseracing.com/",
+    "logo": "https://rseracing.com/assets/img/rseracinglogo.png",
+    "description": "RSE Racing ist ein professionelles Sim Racing Team mit Fokus auf Nachwuchsförderung, fairem Wettkampf, saubere Vorbereitung und eine toxikfreie Community. Wir bauen ein Team für iRacing und Assetto Corsa Competizione.",
+    "sport": "Sim Racing",
+    "sameAs": [
+      // Später hier Social-Media-Links einfügen, z.B. zu Discord, Twitch etc.
+    ]
+  }
+  </script>
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent','default',{
+      'ad_storage':'denied',
+      'analytics_storage':'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied',
+      'functionality_storage':'granted',
+      'security_storage':'granted'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQWLK5NPTE"></script>
+  <script> gtag('js', new Date()); </script>
+  
+  <div id="cookie-banner"
+       class="fixed inset-x-0 bottom-4 z-50 mx-auto w-[min(680px,92vw)] cc-slide-up hidden
+              rounded-2xl border border-white/10 bg-[#0b0f14]/95 backdrop-blur p-4">
+    <div class="flex items-start gap-4">
+      <span class="text-lg" aria-hidden="true">🍪</span>
+      <div class="text-sm text-slate-200">
+        Wir verwenden Cookies für <strong>Google Analytics</strong>. Ohne Zustimmung setzen wir nur technisch notwendige Cookies.
+        Details in der <a class="underline hover:no-underline text-sky-300" href="/legal/datenschutz.html">Datenschutzerklärung</a>.
+        <div class="mt-3 flex gap-2">
+          <button id="accept" class="btn btn-primary !py-2 !px-3 text-sm">Akzeptieren</button>
+          <button id="decline" class="btn btn-ghost !py-2 !px-3 text-sm">Nur notwendig</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Cookie Banner + Consent & GA Aktivierung
+    (function(){
+      const banner = document.getElementById('cookie-banner');
+      const key = 'rse-consent';
+      const saved = localStorage.getItem(key);
+
+      if(!saved){
+        banner.style.display = 'block';
+        requestAnimationFrame(()=> banner.classList.add('cc-show'));
+      }
+
+      function setConsent(granted){
+        const update = granted ? {
+          'ad_storage':'granted',
+          'analytics_storage':'granted',
+          'ad_user_data':'granted',
+          'ad_personalization':'granted'
+        } : {
+          'ad_storage':'denied',
+          'analytics_storage':'denied',
+          'ad_user_data':'denied',
+          'ad_personalization':'denied'
+        };
+        gtag('consent','update', update);
+
+        if(granted){
+          gtag('config', 'G-KQWLK5NPTE', { 'anonymize_ip': true });
+        }
+
+        localStorage.setItem(key, granted ? 'yes' : 'no');
+        if(banner) banner.remove();
+      }
+
+      document.getElementById('accept')?.addEventListener('click', ()=> setConsent(true));
+      document.getElementById('decline')?.addEventListener('click', ()=> setConsent(false));
+
+      if(saved === 'yes'){
+        gtag('consent','update',{
+          'ad_storage':'granted','analytics_storage':'granted',
+          'ad_user_data':'granted','ad_personalization':'granted'
+        });
+        gtag('config', 'G-KQWLK5NPTE', { 'anonymize_ip': true });
+      }
+    })();
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Reveal on enter viewport
+      const rIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('show');
+            rIO.unobserve(e.target);
+          }
+        });
+      }, { root:null, threshold:.15 });
+      document.querySelectorAll('.reveal').forEach(el => rIO.observe(el));
+      
+      // Mobile Menu Toggle
+      const hamBtn = document.getElementById('ham');
+      const mobileMenu = document.getElementById('mobile-menu');
+      function toggleMobileMenu(){
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamBtn.setAttribute('aria-expanded', isOpen);
+      }
+      hamBtn.addEventListener('click', toggleMobileMenu);
+      document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', toggleMobileMenu));
+      
+      // Active Nav Link on Scroll
+      const sections = document.querySelectorAll('main > section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, { root: null, threshold: 0.5, rootMargin: '-50% 0px -50% 0px' });
+      
+      sections.forEach(section => {
+        navIO.observe(section);
+      });
+      
+      // Set initial active link
+      const currentSection = [...sections].find(s => s.getBoundingClientRect().top >= 0) || sections[0];
+      if (currentSection) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection.id);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

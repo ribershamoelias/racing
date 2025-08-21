@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutz – RSE Racing</title>
+  <meta name="description" content="Datenschutzerklärung von RSE Racing. Hosting über GitHub Pages. Informationen zu Verarbeitung, Rechtsgrundlagen, Betroffenenrechten und Widerspruch." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <link rel="canonical" href="https://rse-systems.com/legal/datenschutz.html">
+
+  <link rel="icon" href="../assets/img/rseracinglogo.png" type="image/png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&display=swap');
+
+    :root{
+      --rse-blue:#0080ff;
+      --rse-blue-2:#00b1ff;
+      --bg-900:#0b0f14;
+      --bg-800:#111722;
+      --bg-700:#161b22;
+      --glass: rgba(255,255,255,.06);
+      --glass-border: rgba(255,255,255,.14);
+      --dock-h:68px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      height:100%;
+      background:var(--bg-900);
+      color:#fff;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-racing{ font-family:'Orbitron', monospace; letter-spacing:.02em; }
+    .title{
+      font-family:'Orbitron', monospace;
+      font-weight:900; letter-spacing:.02em;
+      background: linear-gradient(90deg, #e8f3ff 0%, #a9d6ff 50%, #69b7ff 100%);
+      -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color:transparent;
+      text-shadow: 0 6px 30px rgba(0,128,255,.12);
+      line-height:1.05;
+    }
+    .text-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .legal-content h2, .legal-content h3 {
+        font-family: 'Orbitron', monospace;
+        letter-spacing: .02em;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--rse-blue-2);
+    }
+    .legal-content p, .legal-content li {
+        color: #d1d5db; /* gray-300 */
+        line-height: 1.6;
+    }
+    .legal-content li {
+      margin-bottom: 0.5rem;
+    }
+    .legal-content ul, .legal-content ol {
+      list-style-position: inside;
+      padding-left: 0;
+    }
+    .legal-content ol li {
+      margin-left: 1.5rem;
+      list-style-type: decimal;
+    }
+    .legal-content a {
+      color: var(--rse-blue);
+      text-decoration: underline;
+    }
+    .legal-content a:hover {
+      text-decoration: none;
+    }
+    
+    .glass-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .dock {
+      position:fixed; left:50%; bottom:16px; transform:translateX(-50%);
+      z-index:50; background: rgba(16,22,35,.72); backdrop-filter: blur(16px);
+      border:1px solid rgba(255,255,255,.12); border-radius:24px; padding:8px 12px;
+      box-shadow: 0 10px 36px rgba(0,0,0,.4);
+    }
+    .dock-list{ display:flex; align-items:center; gap:.5rem; list-style:none; margin:0; padding:0; }
+    .dock-btn{
+      position:relative;
+      display:grid; place-items:center; width:44px; height:44px; border-radius:12px;
+      background:#121a2a; border:1px solid rgba(255,255,255,.08);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      box-shadow: 0 2px 12px rgba(0,128,255,.2);
+      color:#e7f1ff; text-decoration:none; font-size:18px;
+    }
+    .dock-btn:hover{ transform:translateY(-4px) scale(1.08); box-shadow: 0 8px 28px rgba(0,128,255,.4); }
+    .dock-btn.active{ background: var(--rse-blue); border-color: rgba(0,0,0,.2); color:#06101e; }
+  </style>
+</head>
+
+<body class="bg-[var(--bg-900)] text-gray-200">
+
+  <header class="py-6 px-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="../index.html" class="flex items-center gap-3 font-racing text-2xl" aria-label="RSE Racing – Startseite">
+        <img src="../assets/img/rseracinglogo.png" alt="RSE Racing Logo" class="w-8 h-8 rounded-md" />
+        <span class="title">RSE Racing</span>
+      </a>
+      <nav class="hidden sm:block">
+        <ul class="flex space-x-6 font-semibold text-sm">
+          <li><a href="../index.html#vision" class="text-white hover:text-sky-400 transition-colors">Vision</a></li>
+          <li><a href="../index.html#vorgehen" class="text-white hover:text-sky-400 transition-colors">Vorgehen</a></li>
+          <li><a href="../index.html#roadmap" class="text-white hover:text-sky-400 transition-colors">Roadmap</a></li>
+          <li><a href="../index.html#partner" class="text-white hover:text-sky-400 transition-colors">Partner</a></li>
+          <li><a href="../index.html#kontakt" class="text-white hover:text-sky-400 transition-colors">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="py-12 px-4">
+    <div class="text-container">
+      <header class="text-center mb-12">
+        <h1 class="title text-4xl md:text-5xl font-black mb-4">Datenschutzerklärung</h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">Transparente Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß Art. 12 ff. DSGVO.</p>
+        <div class="mt-4 text-sm text-gray-400">Stand: <strong>17.08.2025</strong></div>
+      </header>
+
+      <div class="legal-content">
+        <nav class="glass-card mb-8" aria-label="Inhaltsverzeichnis">
+          <h2 class="!mt-0">Inhalt</h2>
+          <ol class="text-sm text-gray-300">
+            <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+            <li><a href="#begriffe">Begriffsbestimmungen</a></li>
+            <li><a href="#hosting">Hosting über GitHub Pages</a></li>
+            <li><a href="#verarbeitung">Verarbeitungsvorgänge im Detail</a></li>
+            <li><a href="#rechtsgrundlagen">Rechtsgrundlagen</a></li>
+            <li><a href="#empfaenger">Empfänger & Auftragsverarbeiter</a></li>
+            <li><a href="#drittland">Datenübermittlung in Drittländer</a></li>
+            <li><a href="#speicherdauer">Speicherdauer & Löschung</a></li>
+            <li><a href="#rechte">Ihre Rechte</a></li>
+            <li><a href="#cookies">Cookies & ähnliche Technologien</a></li>
+            <li><a href="#sicherheit">Sicherheit (TLS, Logs, TOM)</a></li>
+            <li><a href="#aenderungen">Änderungen dieser Erklärung</a></li>
+            <li><a href="#kontakt">Kontakt zum Datenschutz</a></li>
+          </ol>
+        </nav>
+
+        <article id="verantwortlicher" class="glass-card mb-8">
+          <h2>1. Verantwortlicher</h2>
+          <p><strong>RSE Systems</strong> (Einzelunternehmen)<br>
+            E-Mail: <a href="mailto:info@rse-systems.com">info@rse-systems.com</a><br>
+            Sitz: Deutschland (Remote-Services deutschlandweit)
+          </p>
+          <p class="mt-2">Ein Datenschutzbeauftragter ist nicht benannt, da die gesetzlichen Voraussetzungen hierfür nicht vorliegen.</p>
+        </article>
+
+        <article id="begriffe" class="glass-card mb-8">
+          <h2>2. Begriffsbestimmungen</h2>
+          <p>Es gelten die Definitionen des Art. 4 DSGVO (z. B. „personenbezogene Daten“, „Verarbeitung“, „Verantwortlicher“, „Auftragsverarbeiter“, „Empfänger“, „Einwilligung“).</p>
+        </article>
+
+        <article id="hosting" class="glass-card mb-8">
+          <h2>3. Hosting über GitHub Pages</h2>
+          <p>Unsere Website wird über <strong>GitHub Pages</strong> betrieben, einen Dienst der GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (eine Tochtergesellschaft von Microsoft).</p>
+          <p>Beim Aufruf der Seiten verarbeitet GitHub automatisch technisch notwendige Daten in Server-Logfiles, u. a.:</p>
+          <ul class="list-disc ml-6 mt-2 mb-2">
+            <li>IP-Adresse</li>
+            <li>Datum/Uhrzeit und Zeitzone</li>
+            <li>Browsertyp/-version, Betriebssystem</li>
+            <li>Referrer-URL</li>
+            <li>abgerufene Ressourcen/Statuscodes</li>
+          </ul>
+          <p>Die Verarbeitung dient der Bereitstellung, Stabilität und Sicherheit des Dienstes. <strong>Wir selbst speichern keine Server-Logs</strong> dieser Website.</p>
+          <p>Die Verarbeitung kann in den USA erfolgen. GitHub/Microsoft stützen Datenübermittlungen auf <strong>EU-Standardvertragsklauseln</strong> (Art. 46 DSGVO) und – soweit anwendbar – auf das <strong>EU-US Data Privacy Framework</strong>.</p>
+          <p>Weitere Informationen finden Sie in der GitHub-Datenschutzerklärung: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+        </article>
+
+        <article id="verarbeitung" class="glass-card mb-8">
+          <h2>4. Verarbeitungsvorgänge im Detail</h2>
+          <h3>4.1 Besuch der Website</h3>
+          <p>Technisch erforderliche Daten (siehe oben) werden durch GitHub verarbeitet, um die Website auszuliefern und Missbrauch zu verhindern.</p>
+          <h3>4.2 Kontaktaufnahme per E-Mail</h3>
+          <p>Bei Kontakt verarbeiten wir Ihre Angaben (z. B. Name, E-Mail, Inhalt der Nachricht) zur Bearbeitung Ihrer Anfrage sowie für Rückfragen. Eine Weitergabe an Dritte erfolgt nicht ohne Rechtsgrundlage.</p>
+          <h3>4.3 Vertrags- und Projektabwicklung</h3>
+          <p>Im Rahmen von Projekten verarbeiten wir Stammdaten, Kommunikations- und Abrechnungsdaten sowie projektbezogene Inhalte. Soweit erforderlich, erfolgt die Verarbeitung auch zur Rechtsverteidigung und Erfüllung gesetzlicher Pflichten.</p>
+          <h3>4.4 Bestandskunden-Informationen</h3>
+          <p>Unter den Voraussetzungen des § 7 Abs. 3 UWG können wir Bestandskunden per E-Mail über ähnliche eigene Leistungen informieren. Sie können dem jederzeit widersprechen.</p>
+        </article>
+
+        <article id="rechtsgrundlagen" class="glass-card mb-8">
+          <h2>5. Rechtsgrundlagen</h2>
+          <ul class="list-disc ml-6">
+            <li><strong>Art. 6 Abs. 1 lit. b DSGVO:</strong> Vertrag/Vertragsanbahnung (Projektkommunikation, Auftragsabwicklung).</li>
+            <li><strong>Art. 6 Abs. 1 lit. f DSGVO:</strong> berechtigte Interessen (IT-Sicherheit, Betriebsstabilität, Kundenkommunikation, Rechtsverteidigung).</li>
+            <li><strong>Art. 6 Abs. 1 lit. c DSGVO:</strong> rechtliche Verpflichtungen (Handels-/Steuerrecht).</li>
+            <li><strong>Art. 6 Abs. 1 lit. a DSGVO:</strong> Einwilligung (z. B. Newsletter, optionale Tools) – jederzeit widerrufbar.</li>
+          </ul>
+        </article>
+
+        <article id="empfaenger" class="glass-card mb-8">
+          <h2>6. Empfänger & Auftragsverarbeiter</h2>
+          <p>Wir setzen erforderliche Dienstleister ein (z. B. Hosting/E-Mail). Soweit diese in unserem Auftrag handeln, bestehen Verträge zur Auftragsverarbeitung gemäß Art. 28 DSGVO. Eine Weitergabe an Dritte erfolgt nur bei Rechtsgrundlage (z. B. Vertragserfüllung, Einwilligung, gesetzliche Pflicht).</p>
+          <p class="mt-2 text-sm text-gray-400"><em>Hinweis:</em> Wenn zukünftig weitere konkrete Anbieter genutzt werden (z. B. Mail-Provider, Projekt-Tools), ergänzen wir diese an dieser Stelle namentlich.</p>
+        </article>
+
+        <article id="drittland" class="glass-card mb-8">
+          <h2>7. Datenübermittlung in Drittländer</h2>
+          <p>Eine Drittlandübermittlung findet statt, wenn dies zur Vertragserfüllung erforderlich ist, Sie eingewilligt haben oder geeignete Garantien i. S. d. Art. 44 ff. DSGVO vorliegen (z. B. EU-Standardvertragsklauseln, Angemessenheitsbeschluss).</p>
+        </article>
+
+        <article id="speicherdauer" class="glass-card mb-8">
+          <h2>8. Speicherdauer & Löschung</h2>
+          <p>Daten werden nur solange gespeichert, wie es für die Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Anschließend löschen oder anonymisieren wir die Daten. Handels-/steuerrechtliche Fristen betragen regelmäßig 6–10 Jahre.</p>
+        </article>
+
+        <article id="rechte" class="glass-card mb-8">
+          <h2>9. Ihre Rechte</h2>
+          <ul class="list-disc ml-6">
+            <li>Auskunft (Art. 15 DSGVO)</li>
+            <li>Berichtigung (Art. 16 DSGVO)</li>
+            <li>Löschung (Art. 17 DSGVO)</li>
+            <li>Einschränkung (Art. 18 DSGVO)</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerspruch (Art. 21 DSGVO) gegen Verarbeitungen auf Basis berechtigter Interessen; gesondert gegen Direktwerbung.</li>
+            <li>Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO) mit Wirkung für die Zukunft.</li>
+            <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO).</li>
+          </ul>
+          <p class="mt-2">Zur Ausübung Ihrer Rechte genügt eine formlose E-Mail an <a href="mailto:info@rse-systems.com">info@rse-systems.com</a>. Zur Verifikation kann ein Identitätsnachweis erforderlich sein.</p>
+        </article>
+
+        <article id="cookies" class="glass-card mb-8">
+          <h2>10. Cookies & ähnliche Technologien</h2>
+          <p>Aktuell setzen wir nur technisch notwendige Cookies ein. Analyse-/Marketing-Cookies werden nicht verwendet. Sollten künftig optionale Tools hinzukommen, informieren wir hier und holen Ihre Einwilligung ein (Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 TTDSG).</p>
+        </article>
+
+        <article id="sicherheit" class="glass-card mb-8">
+          <h2>11. Sicherheit (TLS, Logs, TOM)</h2>
+          <p>Wir verwenden TLS/SSL-Verschlüsselung, rollenbasierte Zugriffe, Backups und weitere angemessene technische und organisatorische Maßnahmen (Art. 32 DSGVO). Server-Logs werden – soweit sie uns vorliegen – nur zur Fehleranalyse/Beweissicherung und zeitlich begrenzt genutzt.</p>
+        </article>
+
+        <article id="aenderungen" class="glass-card mb-8">
+          <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+          <p>Wir aktualisieren diese Erklärung bei rechtlichen, technischen oder prozessualen Änderungen. Es gilt die jeweils auf dieser Seite veröffentlichte Fassung.</p>
+        </article>
+
+        <article id="kontakt" class="glass-card mb-8">
+          <h2>13. Kontakt zum Datenschutz</h2>
+          <p><strong>RSE Systems</strong><br>
+            E-Mail: <a href="mailto:info@rse-systems.com">info@rse-systems.com</a>
+          </p>
+          <p class="mt-2">Bei Fragen oder Anliegen zum Datenschutz können Sie uns jederzeit kontaktieren. Wir werden Ihre Anfrage schnellstmöglich bearbeiten.</p>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-12 bg-[var(--bg-800)]">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <a href="../index.html" class="flex items-center gap-3 font-racing text-2xl" aria-label="RSE Racing – Startseite">
+          <img src="../assets/img/rseracinglogo.png" alt="RSE Racing Logo" class="w-8 h-8 rounded-md" />
+          <span class="title">RSE Racing</span>
+        </a>
+        <p class="mt-4 text-sm text-gray-400">Ihr Partner für Sim Racing. Talent, Technik und Teamgeist.</p>
+      </div>
+
+      <div>
+        <h5 class="font-racing text-lg mb-4 text-sky-400">Quick Links</h5>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li><a href="../index.html#vision" class="hover:text-sky-400">Vision</a></li>
+          <li><a href="../index.html#roadmap" class="hover:text-sky-400">Roadmap</a></li>
+          <li><a href="../index.html#partner" class="hover:text-sky-400">Partner</a></li>
+          <li><a href="../index.html#kontakt" class="hover:text-sky-400">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-racing text-lg mb-4 text-sky-400">Rechtliches</h5>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li><a href="./datenschutz.html" class="hover:text-sky-400">Datenschutz</a></li>
+          <li><a href="./impressum.html" class="hover:text-sky-400">Impressum</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-racing text-lg mb-4 text-sky-400">Sponsoren</h5>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li>RSE Systems</li>
+          <li>MotorUnity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-4 border-t border-gray-700/50 text-center text-xs text-gray-500">
+      © 2025 RSE Systems – RSE Racing. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+</body>
+</html>

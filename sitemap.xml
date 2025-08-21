@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Startseite -->
+  <url>
+    <loc>https://rseracing.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+    <lastmod>2025-08-20</lastmod>
+    <image:image>
+      <image:loc>https://rseracing.com/assets/img/rseracinglogo.png</image:loc>
+      <image:caption>RSE Racing Logo. Ein professionelles Sim Racing Team mit Fokus auf Nachwuchsförderung, fairen Wettkampf und Community.</image:caption>
+      <image:title>RSE Racing – Sim Racing Team Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rseracing.com/assets/img/RSELogo.png</image:loc>
+      <image:caption>Logo von RSE Systems, dem Hauptsponsor von RSE Racing.</image:caption>
+      <image:title>RSE Systems</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://rseracing.com/assets/img/motorunity.png</image:loc>
+      <image:caption>Logo von MotorUnity, dem Community-Partner von RSE Racing.</image:caption>
+      <image:title>MotorUnity</image:title>
+    </image:image>
+  </url>
+
+  <!-- Roadmap -->
+  <url>
+    <loc>https://rseracing.com/#roadmap</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Vorgehen -->
+  <url>
+    <loc>https://rseracing.com/#vorgehen</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Vision -->
+  <url>
+    <loc>https://rseracing.com/#vision</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Partner -->
+  <url>
+    <loc>https://rseracing.com/#partner</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Kontakt -->
+  <url>
+    <loc>https://rseracing.com/#kontakt</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Impressum -->
+  <url>
+    <loc>https://rseracing.com/legal/impressum.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+  <!-- Datenschutz -->
+  <url>
+    <loc>https://rseracing.com/legal/datenschutz.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+    <lastmod>2025-08-20</lastmod>
+  </url>
+
+</urlset>

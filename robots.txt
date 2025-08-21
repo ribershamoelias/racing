@@ -1,0 +1,28 @@
+# robots.txt für https://rseracing.com
+# Steuert, wie Suchmaschinen unsere Seite crawlen dürfen.
+
+User-agent: *
+Disallow: /assets/tmp/
+Disallow: /drafts/
+Allow: /
+
+# Erlaube alle wichtigen Bots explizit
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Blockiere interne oder sensible Bereiche (falls vorhanden)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Sitemap-Hinweis
+Sitemap: https://rseracing.com/sitemap.xml
