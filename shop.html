@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>REVIEW – {{PRODUCT_TITLE}} | RSE Racing</title>
-  <meta name="description" content="Ehrliches Review zu {{PRODUCT_TITLE}}: Stärken, Schwächen, Setup-Tipps & Kaufempfehlung. Transparenz: Affiliate-Links unterstützen das Projekt ohne Mehrkosten." />
+  <title>Shop – RSE Racing | Sim Racing Empfehlungen & Reviews</title>
+  <meta name="description" content="RSE Racing Shop: Empfehlungen, Reviews & Guides zu Sim-Racing-Hardware. Lenkräder, Bases, Pedale, Rigs & Zubehör – mit Affiliate-Links zu Amazon." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b0f14" />
-  <link rel="canonical" href="https://rseracing.com/reviews/{{SLUG}}.html" />
+  <link rel="canonical" href="https://rseracing.com/shop.html" />
 
-  <!-- Favicons (wie Startseite) -->
+  <!-- Favicons (same paths as Startseite) -->
   <link rel="apple-touch-icon" sizes="57x57" href="/favicons.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicons.ico/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/favicons.ico/apple-icon-72x72.png">
@@ -28,17 +28,20 @@
   <meta name="msapplication-TileImage" content="/favicons.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="RSE Racing" />
-  <meta property="og:title" content="Review – {{PRODUCT_TITLE}}" />
-  <meta property="og:description" content="Ehrliches Review: Stärken, Schwächen & Kaufberatung." />
-  <meta property="og:url" content="https://rseracing.com/reviews/{{SLUG}}.html" />
-  <meta property="og:image" content="https://rseracing.com/assets/reviews/{{SLUG}}/cover.jpg" />
+  <meta property="og:title" content="RSE Racing – Shop: Empfehlungen & Reviews" />
+  <meta property="og:description" content="Sim-Racing-Hardware: Empfehlungen, Reviews & Guides." />
+  <meta property="og:url" content="https://rseracing.com/shop.html" />
+  <meta property="og:image" content="https://rseracing.com/assets/img/rseracinglogo.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RSE Racing – Shop: Empfehlungen & Reviews" />
+  <meta name="twitter:description" content="Sim-Racing-Hardware: Empfehlungen, Reviews & Guides." />
+  <meta name="twitter:image" content="https://rseracing.com/assets/img/rseracinglogo.png" />
 
-  <!-- Adsense / Analytics (wie Startseite) -->
+  <!-- Adsense / Analytics consent matches index.html -->
   <meta name="google-adsense-account" content="ca-pub-3039184655735923">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3039184655735923" crossorigin="anonymous"></script>
 
@@ -49,64 +52,105 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&display=swap');
 
     :root{
-      --rse-blue:#0080ff; --rse-blue-2:#00b1ff;
-      --bg-900:#0b0f14; --bg-800:#111722; --bg-700:#161b22;
-      --glass: rgba(255,255,255,.06); --glass-border: rgba(255,255,255,.14);
-      --nav-h:64px; --nav-gap:10px;
+      --rse-blue:#0080ff;
+      --rse-blue-2:#00b1ff;
+      --bg-900:#0b0f14;
+      --bg-800:#111722;
+      --bg-700:#161b22;
+      --glass: rgba(255,255,255,.06);
+      --glass-border: rgba(255,255,255,.14);
+      --nav-h:64px;
+      --nav-gap:10px;
     }
     @media (min-width:768px){ :root{ --nav-h:74px; --nav-gap:12px; } }
 
+    *{ box-sizing:border-box; }
     html, body{ height:100%; }
-    body{ margin:0; background:var(--bg-900); color:#fff; font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    body{
+      margin:0; background:var(--bg-900); color:#fff;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
     .font-racing{ font-family:'Orbitron', monospace; letter-spacing:.02em; }
 
-    /* Nav */
-    .site-nav{ position:fixed; inset-inline:0; top: env(safe-area-inset-top,0px); height: calc(var(--nav-h)); z-index:60; background: rgba(12,18,30,.75); backdrop-filter: blur(14px); border-bottom:1px solid rgba(255,255,255,.10); }
-    .nav-link{ display:inline-flex; align-items:center; gap:.4rem; padding:.55rem .8rem; border-radius:10px; font-weight:600; color:#e7f1ff; text-decoration:none; border:1px solid transparent; transition: border-color .2s, background .2s, color .2s, transform .2s; }
+    /* Top Nav */
+    .site-nav{
+      position:fixed; inset-inline:0;
+      top: env(safe-area-inset-top, 0px);
+      height: calc(var(--nav-h));
+      z-index:60;
+      background: rgba(12,18,30,.75);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .nav-link{
+      display:inline-flex; align-items:center; gap:.4rem;
+      padding:.55rem .8rem; border-radius:10px; font-weight:600; color:#e7f1ff; text-decoration:none;
+      border:1px solid transparent; transition: border-color .2s, background .2s, color .2s, transform .2s;
+    }
     .nav-link:hover{ color:#fff; transform:translateY(-1px); }
-    .nav-link.active{ border-color: rgba(255,255,255,.16); background: rgba(0,128,255,.10); box-shadow: inset 0 0 12px rgba(0,128,255,.10); }
-    .mobile-sheet{ position:fixed; inset-inline:0; top: calc(var(--nav-h) + env(safe-area-inset-top,0px)); z-index:55; background: rgba(10,16,28,.95); border-bottom:1px solid rgba(255,255,255,.10); transform: translateY(-8px); opacity:0; pointer-events:none; transition:.22s ease; }
+    .nav-link.active{
+      border-color: rgba(255,255,255,.16);
+      background: rgba(0,128,255,.10);
+      box-shadow: inset 0 0 12px rgba(0,128,255,.10);
+    }
+
+    .mobile-sheet{
+      position:fixed; inset-inline:0;
+      top: calc(var(--nav-h) + env(safe-area-inset-top,0px));
+      z-index:55;
+      background: rgba(10,16,28,.95);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      transform: translateY(-8px);
+      opacity:0; pointer-events:none; transition:.22s ease;
+    }
     .mobile-sheet.open{ transform:none; opacity:1; pointer-events:auto; }
-    .ham-btn{ width:42px; height:42px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); display:grid; place-items:center; font-size:20px; }
+    .ham-btn{ width:42px; height:42px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.06); display:grid; place-items:center; font-size:20px; line-height:1; }
 
     /* Hero */
-    .hero{ position:relative; min-height:46vh; display:flex; align-items:center; background:
-      radial-gradient(120% 80% at 50% 100%, rgba(0,128,255,.08) 0%, rgba(0,0,0,0) 60%),
-      linear-gradient(140deg, #0b0f14 0%, #0d1320 45%, #0a1526 100%);
-      padding-top: calc(var(--nav-h) + var(--nav-gap));
+    .hero-section{
+      position:relative; width:100%; min-height:56vh; overflow:hidden;
+      background:
+        radial-gradient(120% 80% at 50% 100%, rgba(0,128,255,.08) 0%, rgba(0,0,0,0) 60%),
+        linear-gradient(140deg, #0b0f14 0%, #0d1320 45%, #0a1526 100%);
+      isolation:isolate; padding: clamp(20px, 3vw, 48px);
+      padding-top: calc(var(--nav-h) + var(--nav-gap) + env(safe-area-inset-top,0px));
+      display:flex; align-items:center;
     }
-    .speedlines::before, .speedlines::after{ content:""; position:absolute; left:-20%; width:140%; height:1px; background:linear-gradient(90deg, transparent, rgba(0,128,255,.65), transparent); filter:blur(.2px); opacity:.18; pointer-events:none; animation: lines 4.6s linear infinite; }
+    .speedlines::before, .speedlines::after{
+      content:""; position:absolute; left:-20%; width:140%; height:1px;
+      background:linear-gradient(90deg, transparent, rgba(0,128,255,.65), transparent);
+      filter:blur(.2px); opacity:.18; pointer-events:none; animation: lines 4.6s linear infinite;
+    }
     .speedlines::before{ top:30%; animation-delay:.6s; }
     .speedlines::after{ top:70%; animation-delay:1.6s; }
     @keyframes lines { 0%{ transform:translateX(-30%);} 100%{ transform:translateX(30%);} }
 
+    /* Cards / Utilities */
+    .glass{ background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .glass:hover{ transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,128,255,.15); border-color: rgba(0,128,255,.35); }
+
     .title{ font-family:'Orbitron', monospace; font-weight:900; letter-spacing:.02em; background: linear-gradient(90deg, #e8f3ff 0%, #a9d6ff 50%, #69b7ff 100%); -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color:transparent; text-shadow: 0 6px 30px rgba(0,128,255,.12); line-height:1.05; }
-    .glass{ background:var(--glass); border:1px solid var(--glass-border); border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08); }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.1rem; border-radius:14px; font-weight:700; text-decoration:none; transition:.2s ease; }
+
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.1rem; border-radius:14px; font-weight:700; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease; text-decoration:none; }
     .btn-primary{ color:#0a1220; background:linear-gradient(180deg, var(--rse-blue) 0%, #0073e6 100%); box-shadow:0 0 24px rgba(0,128,255,.35); }
     .btn-primary:hover{ transform: translateY(-2px) scale(1.02); box-shadow:0 0 40px rgba(0,128,255,.5); }
     .btn-ghost{ color: var(--rse-blue); border: 2px solid var(--rse-blue); background: transparent; }
     .btn-ghost:hover{ background: var(--rse-blue); color:#06101e; box-shadow:0 0 36px rgba(0,128,255,.35); }
 
-    .content{ max-width: 1100px; margin: 0 auto; padding: clamp(32px, 5vw, 64px) clamp(20px, 3vw, 48px); }
-    .sidebar-sticky{ position: sticky; top: calc(var(--nav-h) + 16px); }
+    .reveal{ opacity:0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show{ opacity:1; transform:none; }
 
-    .specgrid{ display:grid; grid-template-columns: 1fr 2fr; gap:.5rem 1rem; font-size:.95rem; }
-    .specgrid dt{ color:#a6b9d4; }
-    .specgrid dd{ color:#e6f2ff; }
+    .content-section{ padding: clamp(40px, 7vw, 96px) clamp(20px, 3vw, 48px); max-width: 1280px; margin: 0 auto; }
+    .content-section.alt{ background: var(--bg-800); }
 
-    .procon li{ margin-left:1.1rem; }
-    .procon .pro::marker{ content:"+  "; color:#67ffa3; }
-    .procon .con::marker{ content:"–  "; color:#ff7b7b; }
+    /* Product grid */
+    .product-img{ aspect-ratio: 4/3; object-fit: contain; background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.25)); border-radius: 12px; }
+    .badge{ font-size:.7rem; border:1px solid rgba(255,255,255,.18); background: rgba(0,128,255,.12); color:#d9efff; padding:.25rem .5rem; border-radius:999px; }
+    .price{ font-variant-numeric: tabular-nums; }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-    .rating-badge{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .55rem; border-radius:999px; background: rgba(0,128,255,.14); border:1px solid rgba(0,128,255,.25); }
-    .kicker{ font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:#9fbfe0; }
-
-    .note{ font-size:.9rem; color:#c9d7e7; }
-
-    pre.code{ background: #0e1522; border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:12px; overflow:auto; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size:.85rem; color:#d7e7ff; }
-
-    @media (prefers-reduced-motion: reduce){ .speedlines::before, .speedlines::after{ animation:none !important; } }
+    @media (prefers-reduced-motion: reduce){ .reveal{ transition:none !important; } .speedlines::before, .speedlines::after{ animation:none !important; } }
   </style>
 </head>
 <body>
@@ -114,7 +158,7 @@
   <header class="site-nav" aria-label="Hauptnavigation">
     <div class="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3" aria-label="Startseite">
-        <img src="/assets/img/rseracinglogo.png" alt="RSE Racing Logo" class="w-8 h-8 rounded-md" />
+        <img src="./assets/img/rseracinglogo.png" alt="RSE Racing Sim Racing Team Logo" class="w-8 h-8 rounded-md" />
         <span class="font-racing text-xl">RSE Racing</span>
       </a>
       <nav class="hidden md:block">
@@ -123,7 +167,9 @@
           <li><a class="nav-link" href="/index.html#vorgehen">Vorgehen</a></li>
           <li><a class="nav-link" href="/index.html#roadmap">Roadmap</a></li>
           <li><a class="nav-link" href="/index.html#partner">Partner</a></li>
+          <li><a class="nav-link" href="/index.html#kontakt">Kontakt</a></li>
           <li><a class="nav-link active" href="/shop.html">Shop</a></li>
+          <li><a class="nav-link" href="#warum">Warum?</a></li>
         </ul>
       </nav>
       <button id="ham" class="md:hidden ham-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">☰</button>
@@ -134,147 +180,196 @@
         <li><a class="nav-link w-full" href="/index.html#vorgehen">🧭 Vorgehen</a></li>
         <li><a class="nav-link w-full" href="/index.html#roadmap">🗺️ Roadmap</a></li>
         <li><a class="nav-link w-full" href="/index.html#partner">🤝 Partner</a></li>
-        <li><a class="nav-link w-full" href="/shop.html">🛒 Shop</a></li>
+        <li><a class="nav-link w-full" href="/index.html#kontakt">✉️ Kontakt</a></li>
+        <li><a class="nav-link w-full active" href="/shop.html">🛒 Shop</a></li>
+        <li><a class="nav-link w-full" href="#warum">ℹ️ Warum Produktplatzierungen?</a></li>
+        <li><a class="nav-link w-full" href="/en/index.html">English</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="speedlines" aria-hidden="true"></div>
-    <div class="content w-full">
-      <nav class="text-sm text-slate-400 mb-4" aria-label="Breadcrumb">
-        <a class="underline hover:no-underline" href="/shop.html">Shop</a> · <span id="bc-name">{{PRODUCT_TITLE}}</span>
-      </nav>
-      <div class="grid lg:grid-cols-3 gap-6 items-start">
-        <div class="lg:col-span-2">
-          <h1 id="h-title" class="title text-3xl md:text-5xl">{{PRODUCT_TITLE}}</h1>
-          <p class="kicker mt-3">Review • <span id="brand">{{BRAND}}</span> • <span id="date">2025-08-01</span> • <span id="readtime">Lesezeit 6 Min.</span></p>
-          <div class="mt-5 glass p-3">
-            <img id="cover" src="/assets/reviews/{{SLUG}}/cover.jpg" alt="{{PRODUCT_TITLE}} – Produktfoto" class="w-full rounded-lg" loading="lazy"/>
+  <main>
+    <!-- HERO -->
+    <section class="hero-section" aria-label="RSE Racing Shop">
+      <div class="speedlines" aria-hidden="true"></div>
+      <div class="mx-auto max-w-6xl w-full text-center">
+        <header>
+          <div class="reveal" style="transition-delay:.05s">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/5">
+              <img src="./assets/img/rseracinglogo.png" alt="RSE Racing Logo" width="24" height="24" class="rounded-md"/>
+              <strong class="font-racing">RSE Racing</strong>
+              <span class="text-slate-400">• Shop</span>
+            </span>
+          </div>
+          <h1 class="title text-4xl md:text-6xl font-black mt-6 reveal" style="transition-delay:.12s">Empfehlungen & Reviews für Sim Racing</h1>
+          <p class="text-slate-300 text-lg md:text-xl mt-5 max-w-3xl mx-auto reveal" style="transition-delay:.2s">
+            Ausgewählte Produkte, kurz begründet. Mit <span class="font-semibold text-sky-400">Affiliate-Links zu Amazon</span>.
+            Wenn du über unsere Links kaufst, unterstützt du das Projekt – ohne Mehrkosten.
+          </p>
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-3 md:gap-4 reveal" style="transition-delay:.28s">
+            <a href="#grid" class="btn btn-primary">Produkte ansehen</a>
+            <a href="#faq" class="btn btn-ghost">Kaufberatung</a>
+          </div>
+          <p class="mt-3 text-sm text-slate-400 reveal" style="transition-delay:.36s">
+            <a class="underline hover:no-underline" href="#warum">Warum machen wir diese Produktplatzierungen?</a>
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <!-- Disclosure / Hinweis -->
+    <section class="content-section">
+      <div class="glass p-4 md:p-5 reveal" style="transition-delay:.05s">
+        <p class="text-sm text-slate-200">
+          <strong>Transparenz-Hinweis:</strong> Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Preise & Verfügbarkeit prüfst du direkt bei Amazon. <a href="#warum" class="underline hover:no-underline">Mehr dazu</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filterbar -->
+    <section class="content-section alt" aria-label="Filter & Suche">
+      <div class="reveal" style="transition-delay:.06s">
+        <div class="glass p-4 md:p-5">
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+            <label class="block">
+              <span class="text-xs text-slate-300">Suche</span>
+              <input id="q" type="search" placeholder="z.B. Lenkrad, Pedale, Marke…" class="w-full mt-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-sky-500"/>
+            </label>
+            <label class="block">
+              <span class="text-xs text-slate-300">Kategorie</span>
+              <select id="cat" class="w-full mt-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-sky-500">
+                <option value="">Alle</option>
+                <option>Lenkräder & Bases</option>
+                <option>Pedale</option>
+                <option>Shifter & Handbrake</option>
+                <option>Sitze & Rigs</option>
+                <option>Zubehör</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-xs text-slate-300">Marke</span>
+              <select id="brand" class="w-full mt-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-sky-500">
+                <option value="">Alle</option>
+                <option>Logitech</option>
+                <option>Thrustmaster</option>
+                <option>Fanatec</option>
+                <option>MOZA</option>
+                <option>Playseat</option>
+                <option>Next Level Racing</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-xs text-slate-300">Plattform</span>
+              <select id="platform" class="w-full mt-1 px-3 py-2 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-sky-500">
+                <option value="">Alle</option>
+                <option>PC</option>
+                <option>PlayStation</option>
+                <option>Xbox</option>
+              </select>
+            </label>
+            <label class="block col-span-2 md:col-span-2 lg:col-span-1">
+              <span class="text-xs text-slate-300">Budget (max.)</span>
+              <div class="flex items-center gap-3 mt-1">
+                <input id="price" type="range" min="50" max="2000" step="10" value="2000" class="w-full"/>
+                <span id="priceOut" class="text-sm tabular-nums">€ 2000</span>
+              </div>
+            </label>
+          </div>
+          <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="text-sm text-slate-300"><span id="count">0</span> Produkte</div>
+            <div class="flex items-center gap-2">
+              <label class="block">
+                <span class="sr-only">Sortierung</span>
+                <select id="sort" class="px-3 py-2 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-sky-500">
+                  <option value="pop">Beliebtheit</option>
+                  <option value="price-asc">Preis ↑</option>
+                  <option value="price-desc">Preis ↓</option>
+                  <option value="rating">Bewertung</option>
+                  <option value="new">Neueste</option>
+                </select>
+              </label>
+              <button id="reset" class="btn btn-ghost py-2">Zurücksetzen</button>
+            </div>
           </div>
         </div>
-        <aside class="lg:col-span-1">
-          <div class="glass p-4 sidebar-sticky">
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-slate-400">Bewertung</span>
-              <span id="ratingBadge" class="rating-badge"><span id="rating">4.6</span>/5</span>
-            </div>
-            <div class="mt-2 text-2xl font-bold" id="price">Preis: —</div>
-            <div class="text-xs text-slate-400">(bei Amazon prüfen)</div>
-            <a id="ctaAmazon" href="#" target="_blank" rel="nofollow sponsored noopener" class="btn btn-primary w-full mt-4">Bei Amazon ansehen</a>
-            <a href="/shop.html" class="btn btn-ghost w-full mt-2">← zurück zum Shop</a>
-            <p class="note mt-3">Hinweis: Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Der Link ist ein <strong>Affiliate-Link</strong> – für dich entstehen keine Mehrkosten.</p>
-          </div>
-        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTENT -->
-  <main class="content">
-    <article class="grid lg:grid-cols-3 gap-6 items-start">
-      <div class="lg:col-span-2">
-        <!-- Kurzfazit -->
-        <section class="glass p-5">
-          <h2 class="font-racing text-2xl text-sky-400">Kurzfazit</h2>
-          <p id="summary" class="mt-2 text-slate-200">{{TLDR}}</p>
-        </section>
+    <!-- GRID -->
+    <section class="content-section" aria-label="Produkte">
+      <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
 
-        <!-- Pros / Cons -->
-        <section class="grid sm:grid-cols-2 gap-4 mt-4">
-          <div class="glass p-5">
-            <h3 class="font-racing text-lg text-sky-400">Stärken</h3>
-            <ul id="pros" class="procon list-disc mt-2 text-slate-200">
-              <li class="pro">Beispiel-Punkt</li>
-            </ul>
-          </div>
-          <div class="glass p-5">
-            <h3 class="font-racing text-lg text-sky-400">Schwächen</h3>
-            <ul id="cons" class="procon list-disc mt-2 text-slate-200">
-              <li class="con">Beispiel-Punkt</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Messwerte / Praxis -->
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Praxis & Messwerte</h3>
-          <p class="text-slate-200">Hier beschreibst du die Eindrücke aus Stints (z. B. ACC/iRacing), Setup-Hinweise, Telemetrie (Bremskurven, Konsistenz, Delta über 10 Runden) und ggf. Lautstärke/Force-Profile.</p>
-          <div class="grid sm:grid-cols-2 gap-3 mt-3">
-            <figure class="glass p-3">
-              <img src="/assets/reviews/{{SLUG}}/chart-1.jpg" alt="Telemetry/Chart" class="rounded" loading="lazy"/>
-              <figcaption class="text-xs text-slate-400 mt-1">Beispiel: Pace-Delta über 10 Runden</figcaption>
-            </figure>
-            <figure class="glass p-3">
-              <img src="/assets/reviews/{{SLUG}}/photo-1.jpg" alt="Detailfoto" class="rounded" loading="lazy"/>
-              <figcaption class="text-xs text-slate-400 mt-1">Detailaufnahme</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <!-- Für wen geeignet -->
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Für wen ist es geeignet?</h3>
-          <p id="audience" class="text-slate-200">{{AUDIENCE}}</p>
-        </section>
-
-        <!-- Alternativen -->
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Alternativen</h3>
-          <ul id="alternatives" class="list-disc ml-5 text-slate-200">
-            <li><a class="underline hover:no-underline" href="/reviews/thrustmaster-t300rs.html">Thrustmaster T300RS</a> – etwas teurer, weicher Riemenantrieb.</li>
-          </ul>
-        </section>
-
-        <!-- Transparenz -->
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Transparenz & Warum wir das machen</h3>
-          <p class="text-slate-200">Unser Ziel ist es, <strong>Sim Racing fairer und zugänglicher</strong> zu machen. Reviews kosten Zeit: Recherche, Teststints, Fotos, Schreiben. 
-            <strong>Affiliate-Links</strong> (z. B. zu Amazon) helfen, das Projekt zu finanzieren – <em>ohne Mehrkosten für dich</em>. 
-            Wir verlinken Produkte, die wir guten Gewissens empfehlen können. 
-            <strong>Unabhängigkeit:</strong> Unsere Meinung ist unsere. Leihstellungen/Samples – falls vorhanden – werden gekennzeichnet und haben keinen Einfluss auf die Bewertung. Kooperationen oder Anzeigen werden klar markiert.</p>
-        </section>
-
-        <!-- Fazit -->
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Fazit</h3>
-          <p id="verdict" class="text-slate-200">{{VERDICT}}</p>
-        </section>
+    <!-- FAQ / Kaufberatung kurz -->
+    <section id="faq" class="content-section alt" aria-label="Kaufberatung">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="title text-3xl md:text-4xl reveal">Kaufberatung in 60 Sekunden</h2>
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <article class="glass p-4 reveal" style="transition-delay:.05s">
+            <h3 class="font-racing text-sky-400 mb-1">Einsteiger?</h3>
+            <p class="text-slate-300 text-sm">Starte mit einem <strong>Einsteiger-Bundle</strong> (Lenkrad+Base+Pedale). Fokus: <em>Konstanz</em> statt Max-Force.</p>
+          </article>
+          <article class="glass p-4 reveal" style="transition-delay:.12s">
+            <h3 class="font-racing text-sky-400 mb-1">PC vs. Konsole</h3>
+            <p class="text-slate-300 text-sm">Achte auf <strong>Kompatibilität</strong>. Nicht jede Base läuft auf PS/Xbox. PC ist am flexibelsten.</p>
+          </article>
+          <article class="glass p-4 reveal" style="transition-delay:.2s">
+            <h3 class="font-racing text-sky-400 mb-1">Pedale > Wheel-Force</h3>
+            <p class="text-slate-300 text-sm">Gute Pedale (Loadcell) bringen oft mehr Pace als +5 Nm an der Base. <em>Reproduzierbarkeit</em> zählt.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <!-- Sidebar: Spezifikationen -->
-      <aside class="lg:col-span-1">
-        <section class="glass p-5">
-          <h3 class="font-racing text-lg text-sky-400">Spezifikationen</h3>
-          <dl id="specs" class="specgrid mt-2">
-            <dt>Plattform</dt><dd>PC / PlayStation</dd>
-            <dt>Technik</dt><dd>z. B. Riemen, Direct Drive, Loadcell …</dd>
-            <dt>Lieferumfang</dt><dd>–</dd>
-            <dt>Gewicht</dt><dd>–</dd>
-          </dl>
-        </section>
-        <section class="glass p-5 mt-4">
-          <h3 class="font-racing text-lg text-sky-400">Bewertung im Detail</h3>
-          <ul id="ratingDetail" class="text-slate-200 space-y-1">
-            <li>Verarbeitung: 4.5/5</li>
-            <li>Feeling/Force: 4.2/5</li>
-            <li>Pedale/Brake (falls zutreffend): 4.0/5</li>
-            <li>Software/Setup: 4.0/5</li>
-            <li>Preis/Leistung: 4.6/5</li>
-          </ul>
-        </section>
-      </aside>
-    </article>
+    <!-- WARUM / Transparenz -->
+    <section id="warum" class="content-section" aria-label="Warum wir Produktplatzierungen machen">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="title text-3xl md:text-4xl">Warum machen wir diese Produktplatzierungen?</h2>
+        <div class="glass p-5 mt-6">
+          <p class="text-slate-200">
+            Kurz: Damit wir <strong>ehrliche, hilfreiche Reviews</strong> machen können – und das Projekt sich mittelfristig trägt. Wenn du über unsere
+            <strong>Affiliate-Links (Amazon)</strong> kaufst, erhalten wir eine kleine Provision. <em>Für dich ändert sich der Preis nicht.</em>
+          </p>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <article class="glass p-4">
+              <h3 class="font-racing text-sky-400 text-lg">Unsere Grundsätze</h3>
+              <ul class="list-disc ml-5 text-slate-200 text-sm mt-2 space-y-1">
+                <li><strong>Offenlegung:</strong> Affiliate-Links sind gekennzeichnet.</li>
+                <li><strong>Unabhängigkeit:</strong> Meinung bleibt unsere – auch bei Leihstellungen/Samples.</li>
+                <li><strong>Fairness:</strong> Wir nennen <em>Stärken</em> und <em>Schwächen</em> klar.</li>
+                <li><strong>Keine künstlichen Preise:</strong> Wir empfehlen „<em>Preis prüfen</em>“ statt veralteter Zahlen.</li>
+                <li><strong>Korrekturen:</strong> Fehler? Wir aktualisieren Reviews und notieren das transparent.</li>
+              </ul>
+            </article>
+            <article class="glass p-4">
+              <h3 class="font-racing text-sky-400 text-lg">So testen wir</h3>
+              <ul class="list-disc ml-5 text-slate-200 text-sm mt-2 space-y-1">
+                <li>Praxis-Stints in ACC/iRacing (Konstanz & Pace über mehrere Stints).</li>
+                <li>Setup/Software-Check (Treiber, Profile, TrueForce/FFB etc.).</li>
+                <li>Verarbeitung & Montage (Rig-Kompatibilität, Ergonomie).</li>
+                <li>Vergleich mit Alternativen in der gleichen Preisklasse.</li>
+              </ul>
+            </article>
+          </div>
+          <p class="text-slate-300 text-sm mt-4">Fragen oder Feedback? Schreib uns: <a class="underline hover:no-underline" href="mailto:info@rse-systems.com?subject=Feedback%20zu%20Reviews">info@rse-systems.com</a></p>
+        </div>
+      </div>
+    </section>
 
-    <div class="text-center mt-10 text-xs text-slate-500">
-      © 2025 RSE Systems – RSE Racing •
-      <a class="underline hover:no-underline text-slate-300" href="/legal/datenschutz.html">Datenschutz</a> •
-      <a class="underline hover:no-underline text-slate-300" href="/legal/impressum.html">Impressum</a>
-    </div>
+    <!-- Footer style block -->
+    <section class="content-section" aria-label="Footer">
+      <div class="text-center text-xs text-slate-500">
+        © 2025 RSE Systems – RSE Racing •
+        <a class="underline hover:no-underline text-slate-300" href="/legal/datenschutz.html">Datenschutz</a> •
+        <a class="underline hover:no-underline text-slate-300" href="/legal/impressum.html">Impressum</a>
+      </div>
+      <div class="text-center text-xs text-slate-500 mt-2">
+        Hinweis: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.
+      </div>
+    </section>
   </main>
 
-  <!-- Schema.org wird per Script aus den Daten unten erzeugt -->
+  <!-- JSON-LD ItemList (wird unten aus den Produktdaten generiert) -->
   <script id="schema-holder" type="application/ld+json">{}</script>
 
   <!-- Consent + GA identisch zur Startseite -->
@@ -282,13 +377,18 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('consent','default',{
-      'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','functionality_storage':'granted','security_storage':'granted'
+      'ad_storage':'denied',
+      'analytics_storage':'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied',
+      'functionality_storage':'granted',
+      'security_storage':'granted'
     });
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQWLK5NPTE"></script>
   <script> gtag('js', new Date()); </script>
 
-  <!-- Cookie Banner (wie Startseite) -->
+  <!-- Cookie Banner (kopiert von index.html) -->
   <div id="cookie-banner" class="fixed inset-x-0 bottom-4 z-50 mx-auto w-[min(680px,92vw)] cc-slide-up hidden rounded-2xl border border-white/10 bg-[#0b0f14]/95 backdrop-blur p-4">
     <div class="flex items-start gap-4">
       <span class="text-lg" aria-hidden="true">🍪</span>
@@ -303,139 +403,213 @@
     </div>
   </div>
 
-  <!-- Page Script: Daten befüllen, Schema generieren, Mobile-Menü, Banner -->
+  <!-- Page Scripts: UI, Filter, Render -->
   <script>
-    // ===== Review-Daten (einfach für jedes Produkt anpassen) ==================
-    // ⚠️ Passe ?tag= in den Amazon-Links an (DE: -21). Preise besser als "—" anzeigen,
-    // oder mit "Preis prüfen" arbeiten, wenn du sie nicht regelmäßig aktualisierst.
-    const REVIEW = {
-      slug: 'logitech-g923',
-      title: 'Logitech G923 (TrueForce)',
-      brand: 'Logitech',
-      asin: 'B08H-PLACE',
-      image: '/assets/reviews/logitech-g923/cover.jpg',
-      amazon: 'https://www.amazon.de/dp/B08HXXXXX/?tag=rseracing-21',
-      datePublished: '2025-08-01', // YYYY-MM-DD
-      rating: 4.6, // 0–5
-      priceEUR: null, // z.B. 299 – nur setzen, wenn du es aktuell hältst
-      tldr: 'Sehr gutes Einsteiger-Set für PC und Konsole. TrueForce bringt spürbares Feedback; Pedale ok, Upgrade später sinnvoll.',
-      audience: 'Einsteiger:innen, die ein unkompliziertes Bundle suchen und auf Konsolen spielen möchten.',
-      verdict: 'Klares Go, wenn das Budget knapp ist und du ein All-in-One willst. Wer mehr Drehmoment/Feinheit möchte, schaut zu CSL DD & Co.',
-      pros: [
-        'Einfache Einrichtung (PC & Konsole)',
-        'TrueForce-Feedback spürbar in unterstützten Titeln',
-        'Gute Verarbeitung fürs Geld'
-      ],
-      cons: [
-        'Pedale okay, aber keine Loadcell',
-        'TrueForce nur in kompatiblen Games',
-        'Wenig Upgrade-Pfad im System'
-      ],
-      specs: [
-        ['Plattform', 'PC / PlayStation / Xbox (je nach Version)'],
-        ['Technik', 'Riemen-/Zahnradmix, TrueForce'],
-        ['Pedale', '2–3 Pedale (Modellabhängig)'],
-        ['Kompatible Titel', 'ACC, iRacing, F1 u. a.']
-      ],
-      ratingDetail: [
-        ['Verarbeitung', 4.5],
-        ['Feeling/Force', 4.2],
-        ['Software/Setup', 4.0],
-        ['Preis/Leistung', 4.7]
-      ],
-      alternatives: [
-        ['Thrustmaster T300RS', '/reviews/thrustmaster-t300rs.html'],
-        ['Fanatec CSL DD', '/reviews/fanatec-csl-dd.html']
-      ]
-    };
-
-    // ===== Helper =====
-    const qs = s=>document.querySelector(s);
-    const qsa = s=>document.querySelectorAll(s);
-    const euro = v => typeof v==='number' ? `€ ${v.toLocaleString('de-DE',{maximumFractionDigits:0})}` : '—';
-
-    // Titel & Hero
-    document.title = `REVIEW – ${REVIEW.title} | RSE Racing`;
-    qs('#h-title').textContent = REVIEW.title;
-    qs('#brand').textContent = REVIEW.brand;
-    qs('#date').textContent = REVIEW.datePublished;
-    qs('#bc-name').textContent = REVIEW.title;
-    qs('#cover').src = REVIEW.image;
-    qs('#cover').alt = `${REVIEW.title} – Produktfoto`;
-
-    // CTA / Preis
-    const link = new URL(REVIEW.amazon);
-    qs('#ctaAmazon').href = link.toString();
-    qs('#price').textContent = `Preis: ${euro(REVIEW.priceEUR)} (bei Amazon prüfen)`;
-    qs('#rating').textContent = REVIEW.rating.toFixed(1);
-
-    // Textblöcke
-    qs('#summary').textContent = REVIEW.tldr;
-    qs('#audience').textContent = REVIEW.audience;
-    qs('#verdict').textContent = REVIEW.verdict;
-
-    // Pros/Cons
-    const prosEl = qs('#pros');
-    prosEl.innerHTML = '';
-    REVIEW.pros.forEach(t=>{ const li=document.createElement('li'); li.className='pro'; li.textContent=t; prosEl.appendChild(li); });
-    const consEl = qs('#cons');
-    consEl.innerHTML = '';
-    REVIEW.cons.forEach(t=>{ const li=document.createElement('li'); li.className='con'; li.textContent=t; consEl.appendChild(li); });
-
-    // Specs
-    const specsEl = qs('#specs');
-    specsEl.innerHTML = '';
-    REVIEW.specs.forEach(([k,v])=>{
-      const dt=document.createElement('dt'); dt.textContent=k; specsEl.appendChild(dt);
-      const dd=document.createElement('dd'); dd.textContent=v; specsEl.appendChild(dd);
-    });
-
-    // Rating detail
-    const rdet = qs('#ratingDetail'); rdet.innerHTML='';
-    REVIEW.ratingDetail.forEach(([k,v])=>{
-      const li=document.createElement('li'); li.textContent = `${k}: ${v}/5`; rdet.appendChild(li);
-    });
-
-    // Alternativen
-    const altEl = qs('#alternatives'); altEl.innerHTML='';
-    REVIEW.alternatives.forEach(([t,u])=>{
-      const li=document.createElement('li'); const a=document.createElement('a'); a.href=u; a.className='underline hover:no-underline'; a.textContent=t; li.appendChild(a); altEl.appendChild(li);
-    });
-
-    // JSON-LD Product + Review
-    const schema = {
-      '@context': 'https://schema.org',
-      '@type': 'Review',
-      reviewBody: REVIEW.tldr,
-      datePublished: REVIEW.datePublished,
-      reviewRating: { '@type': 'Rating', ratingValue: REVIEW.rating, bestRating: 5, worstRating: 0 },
-      author: { '@type': 'Organization', name: 'RSE Racing' },
-      itemReviewed: {
-        '@type': 'Product',
-        name: REVIEW.title,
-        brand: REVIEW.brand,
-        image: REVIEW.image,
-        url: `https://rseracing.com/reviews/${REVIEW.slug}.html`,
-        isAccessoryOrSparePartFor: 'Sim Racing',
-        asin: REVIEW.asin,
-        offers: { '@type':'Offer', priceCurrency:'EUR', price: REVIEW.priceEUR || undefined, url: REVIEW.amazon, availability: 'https://schema.org/InStock' }
+    // --- Demo-Produktdaten --------------------------------------------------
+    // 🔧 TODO: Passe tag= in den Amazon-Links an, z.B. ?tag=rseracing-21 (DE Partner-ID)
+    // 🔧 TODO: Ersetze image-URLs durch deine Bilder unter /assets/shop/… (Transparenz, schnelle Ladezeiten)
+    // 🔧 TODO: Ersetze ASINs/Links durch die korrekten Produkte, ergänze weitere Felder nach Bedarf
+    const PRODUCTS = [
+      {
+        id:'g923', asin:'B08H-PLACE',
+        title:'Logitech G923 (TrueForce)',
+        brand:'Logitech', category:'Lenkräder & Bases', platforms:['PC','PlayStation','Xbox'],
+        price:299, rating:4.6, reviews:12000, badge:'Einsteiger-Tipp',
+        image:'/assets/shop/g923.jpg',
+        amazon:'https://www.amazon.de/dp/B08HXXXXX/?tag=rseracing-21',
+        review:'/reviews/logitech-g923.html',
+        added:'2025-08-01'
+      },
+      {
+        id:'t300rs', asin:'B00M-PLACE',
+        title:'Thrustmaster T300RS', brand:'Thrustmaster', category:'Lenkräder & Bases', platforms:['PC','PlayStation'],
+        price:349, rating:4.5, reviews:8000, badge:'Beliebt',
+        image:'/assets/shop/t300rs.jpg',
+        amazon:'https://www.amazon.de/dp/B00MXXXXX/?tag=rseracing-21',
+        review:'/reviews/thrustmaster-t300rs.html',
+        added:'2025-08-01'
+      },
+      {
+        id:'csl-dd', asin:'B09F-PLACE',
+        title:'Fanatec CSL DD (5–8 Nm, Bundle variabel)', brand:'Fanatec', category:'Lenkräder & Bases', platforms:['PC','Xbox'],
+        price:599, rating:4.7, reviews:1500, badge:'Pro-Level',
+        image:'/assets/shop/csl-dd.jpg',
+        amazon:'https://www.amazon.de/dp/B09FXXXXX/?tag=rseracing-21',
+        review:'/reviews/fanatec-csl-dd.html',
+        added:'2025-08-01'
+      },
+      {
+        id:'tlcm', asin:'B083-PLACE',
+        title:'Thrustmaster T-LCM Pedale (Loadcell)', brand:'Thrustmaster', category:'Pedale', platforms:['PC','PlayStation','Xbox'],
+        price:199, rating:4.6, reviews:7000, badge:'Preis/Leistung',
+        image:'/assets/shop/tlcm.jpg',
+        amazon:'https://www.amazon.de/dp/B083XXXXX/?tag=rseracing-21',
+        review:'/reviews/thrustmaster-tlcm.html',
+        added:'2025-08-01'
+      },
+      {
+        id:'gtlite', asin:'B08K-PLACE',
+        title:'Next Level Racing GT Lite (Faltbares Rig)', brand:'Next Level Racing', category:'Sitze & Rigs', platforms:['PC','PlayStation','Xbox'],
+        price:229, rating:4.5, reviews:6000, badge:'Platzsparend',
+        image:'/assets/shop/gtlite.jpg',
+        amazon:'https://www.amazon.de/dp/B08KXXXXX/?tag=rseracing-21',
+        review:'/reviews/nlr-gt-lite.html',
+        added:'2025-08-01'
+      },
+      {
+        id:'th8a', asin:'B005-PLACE',
+        title:'Thrustmaster TH8A Shifter', brand:'Thrustmaster', category:'Shifter & Handbrake', platforms:['PC','PlayStation','Xbox'],
+        price:179, rating:4.6, reviews:9000, badge:'Solide Wahl',
+        image:'/assets/shop/th8a.jpg',
+        amazon:'https://www.amazon.de/dp/B005XXXXX/?tag=rseracing-21',
+        review:'/reviews/thrustmaster-th8a.html',
+        added:'2025-08-01'
       }
-    };
-    qs('#schema-holder').textContent = JSON.stringify(schema);
+    ];
 
-    // Mobile Menu Toggle
+    // --- Helpers ------------------------------------------------------------
+    const qs = s=>document.querySelector(s);
+    const elGrid = qs('#grid');
+    const elCount = qs('#count');
+
+    // Filter controls
+    const ctl = {
+      q: qs('#q'),
+      cat: qs('#cat'),
+      brand: qs('#brand'),
+      platform: qs('#platform'),
+      price: qs('#price'),
+      priceOut: qs('#priceOut'),
+      sort: qs('#sort'),
+      reset: qs('#reset'),
+    };
+
+    const formatPrice = v => typeof v === 'number' ? `€ ${v.toLocaleString('de-DE',{maximumFractionDigits:0})}` : 'Preis prüfen';
+    const stars = v => {
+      const full = Math.floor(v);
+      const half = v - full >= 0.5 ? 1 : 0;
+      const empty = 5 - full - half;
+      return '★'.repeat(full) + (half?'☆':'') + '✩'.repeat(empty);
+    };
+
+    function productCard(p){
+      return `
+      <article class="glass p-4 flex flex-col">
+        <div class="flex items-start justify-between gap-2 mb-3">
+          <span class="badge">${p.badge||'Empfehlung'}</span>
+          <a class="text-slate-400 hover:text-white" title="Zum Review" href="${p.review}">📝</a>
+        </div>
+        <a href="${p.review}" aria-label="Review zu ${p.title}"><img src="${p.image}" alt="${p.title}" class="product-img w-full mb-3 bg-white/5" loading="lazy"/></a>
+        <h3 class="font-semibold text-lg leading-snug"><a class="underline hover:no-underline" href="${p.review}">${p.title}</a></h3>
+        <div class="text-slate-400 text-sm">${p.brand} • ${p.platforms.join(', ')}</div>
+        <div class="mt-2 flex items-center justify-between">
+          <div class="text-yellow-300 text-sm" aria-label="Bewertung">${stars(p.rating)} <span class="sr-only">${p.rating} von 5</span></div>
+          <div class="price text-xl font-bold">${formatPrice(p.price)}</div>
+        </div>
+        <div class="mt-3 grid grid-cols-2 gap-2">
+          <a href="${p.amazon}" class="btn btn-primary !py-2 text-sm" target="_blank" rel="nofollow sponsored noopener" aria-label="Bei Amazon ansehen (Anzeige)">Bei Amazon ansehen</a>
+          <a href="${p.review}" class="btn btn-ghost !py-2 text-sm">Review</a>
+        </div>
+      </article>`;
+    }
+
+    function applyFilters(){
+      const q = ctl.q.value.trim().toLowerCase();
+      const cat = ctl.cat.value;
+      const brand = ctl.brand.value;
+      const plat = ctl.platform.value;
+      const maxPrice = Number(ctl.price.value);
+
+      let res = PRODUCTS.filter(p => (
+        (!cat || p.category===cat) &&
+        (!brand || p.brand===brand) &&
+        (!plat || p.platforms.includes(plat)) &&
+        (!maxPrice || (typeof p.price==='number' ? p.price <= maxPrice : true)) &&
+        (!q || [p.title,p.brand,p.category,(p.platforms||[]).join(' ')].join(' ').toLowerCase().includes(q))
+      ));
+
+      // Sort
+      const s = ctl.sort.value;
+      res.sort((a,b)=>{
+        if(s==='price-asc') return (a.price||1e9)-(b.price||1e9);
+        if(s==='price-desc') return (b.price||-1)-(a.price||-1);
+        if(s==='rating') return (b.rating||0)-(a.rating||0);
+        if(s==='new') return new Date(b.added) - new Date(a.added);
+        // pop: simple heuristic (rating * reviews)
+        const pa = (a.rating||0)*(a.reviews||0);
+        const pb = (b.rating||0)*(b.reviews||0);
+        return pb - pa;
+      });
+
+      render(res);
+    }
+
+    function render(items){
+      // Alle Produkte auf einmal rendern (kein "Mehr laden")
+      elGrid.innerHTML = items.map(productCard).join('');
+      // Anzahl (falls du sie oben anzeigen möchtest)
+      const c = items.length;
+      if(elCount) elCount.textContent = c.toString();
+      // Preis-Output aktualisieren
+      ctl.priceOut.textContent = `€ ${Number(ctl.price.value).toLocaleString('de-DE')}`;
+      // Schema.org ItemList
+      injectSchema(items);
+    }
+
+    function injectSchema(items){
+      const schema = {
+        '@context':'https://schema.org', '@type':'ItemList',
+        itemListElement: items.map((p,idx)=>({
+          '@type':'ListItem', position: idx+1,
+          item: {
+            '@type':'Product', name: p.title, brand: p.brand,
+            url: p.amazon, image: p.image,
+            aggregateRating: p.rating ? { '@type':'AggregateRating', ratingValue: p.rating, reviewCount: p.reviews||0 } : undefined,
+            offers: {
+              '@type':'Offer', price: typeof p.price==='number'? p.price: undefined, priceCurrency:'EUR', url: p.amazon, availability: 'https://schema.org/InStock'
+            }
+          }
+        }))
+      };
+      qs('#schema-holder').textContent = JSON.stringify(schema);
+    }
+
+    // Controls events
+    ['input','change'].forEach(evt=>{
+      ctl.q.addEventListener(evt, debounce(applyFilters, evt==='input'?180:0));
+      ctl.cat.addEventListener(evt, applyFilters);
+      ctl.brand.addEventListener(evt, applyFilters);
+      ctl.platform.addEventListener(evt, applyFilters);
+      ctl.price.addEventListener(evt, applyFilters);
+      ctl.sort.addEventListener(evt, applyFilters);
+    });
+
+    ctl.reset.addEventListener('click', ()=>{
+      ctl.q.value=''; ctl.cat.value=''; ctl.brand.value=''; ctl.platform.value=''; ctl.price.value=2000; ctl.sort.value='pop';
+      applyFilters();
+    });
+
+    function debounce(fn, ms){ let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); }; }
+
+    // Reveal on view
+    const rIO = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); rIO.unobserve(e.target);} });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=> rIO.observe(el));
+
+    // Mobile menu
     const hamBtn = document.getElementById('ham');
     const mobileMenu = document.getElementById('mobile-menu');
     function toggleMobileMenu(){ const isOpen = mobileMenu.classList.toggle('open'); hamBtn.setAttribute('aria-expanded', isOpen); }
     hamBtn.addEventListener('click', toggleMobileMenu);
     document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', toggleMobileMenu));
 
-    // Consent Banner
+    // Consent banner sync (same as index.html)
     (function(){
       const banner = document.getElementById('cookie-banner');
       const key = 'rse-consent';
       const saved = localStorage.getItem(key);
-      if(!saved){ banner.style.display = 'block'; }
+      if(!saved){ banner.style.display = 'block'; requestAnimationFrame(()=> banner.classList.add('cc-show')); }
       function setConsent(granted){
         const update = granted ? {
           'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'
@@ -443,17 +617,21 @@
           'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'
         };
         gtag('consent','update', update);
-        if(granted){ gtag('config','G-KQWLK5NPTE', { 'anonymize_ip': true }); }
+        if(granted){ gtag('config','G-KQWLK5NPTE',{ 'anonymize_ip': true }); }
         localStorage.setItem(key, granted ? 'yes' : 'no');
-        banner.remove();
+        if(banner) banner.remove();
       }
       document.getElementById('accept')?.addEventListener('click', ()=> setConsent(true));
       document.getElementById('decline')?.addEventListener('click', ()=> setConsent(false));
-      if(saved==='yes'){
+      if(saved === 'yes'){
         gtag('consent','update',{ 'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted' });
-        gtag('config','G-KQWLK5NPTE', { 'anonymize_ip': true });
+        gtag('config','G-KQWLK5NPTE',{ 'anonymize_ip': true });
       }
     })();
+
+    // Init: alles rendern
+    applyFilters();
   </script>
 </body>
 </html>
+
