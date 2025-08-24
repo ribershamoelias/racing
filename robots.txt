@@ -1,8 +1,10 @@
 # robots.txt – rseracing.com
+# Ziel: Alles Wichtige crawlen lassen, nur Platzhalter/Interne sperren.
+
 User-agent: *
 Allow: /
 
-# Dünne/temporäre Seiten nicht crawlen
+# Platzhalter/Thin Content
 Disallow: /reviews/0.html
 
 # Interne/versteckte Bereiche
@@ -12,13 +14,23 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
 
-# Duplikate durch Tracking-Parameter vermeiden
-Disallow: /*?*utm_*
+# Tracking-Parameter (Duplikate vermeiden)
+Disallow: /*?*utm_
 Disallow: /*?*gclid*
 Disallow: /*?*fbclid*
+
+# Wichtige Bots explizit erlauben (optional, aber klar)
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: AdsBot-Google
+Allow: /
+User-agent: Bingbot
+Allow: /
 
 # Sitemap
 Sitemap: https://rseracing.com/sitemap.xml
 
-# (Optional, nur Yandex) Parameterbereinigung
+# (Nur Yandex) Parameterbereinigung
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&gclid&fbclid /
